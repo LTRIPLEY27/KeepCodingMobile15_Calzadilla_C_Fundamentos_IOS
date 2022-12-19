@@ -22,6 +22,8 @@
 		2539EA822950BFE9005B8B32 /* HttpConect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2539EA812950BFE9005B8B32 /* HttpConect.swift */; };
 		2539EA852950C354005B8B32 /* ErrorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2539EA842950C354005B8B32 /* ErrorEnum.swift */; };
 		2539EA872950C8B9005B8B32 /* DataLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2539EA862950C8B9005B8B32 /* DataLayer.swift */; };
+		2539EA8D2950CBC4005B8B32 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2539EA8B2950CBC4005B8B32 /* LoginViewController.swift */; };
+		2539EA8E2950CBC4005B8B32 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2539EA8C2950CBC4005B8B32 /* LoginViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		2539EA812950BFE9005B8B32 /* HttpConect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpConect.swift; sourceTree = "<group>"; };
 		2539EA842950C354005B8B32 /* ErrorEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorEnum.swift; sourceTree = "<group>"; };
 		2539EA862950C8B9005B8B32 /* DataLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLayer.swift; sourceTree = "<group>"; };
+		2539EA8B2950CBC4005B8B32 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2539EA8C2950CBC4005B8B32 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +155,7 @@
 		2539EA6E29508283005B8B32 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				2539EA882950CB5D005B8B32 /* LoginView */,
 				2539EA71295082E6005B8B32 /* TableView */,
 			);
 			path = UI;
@@ -199,6 +204,15 @@
 				2539EA842950C354005B8B32 /* ErrorEnum.swift */,
 			);
 			path = Enum;
+			sourceTree = "<group>";
+		};
+		2539EA882950CB5D005B8B32 /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				2539EA8B2950CBC4005B8B32 /* LoginViewController.swift */,
+				2539EA8C2950CBC4005B8B32 /* LoginViewController.xib */,
+			);
+			path = LoginView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,6 +319,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2539EA8E2950CBC4005B8B32 /* LoginViewController.xib in Resources */,
 				2539EA4A29508207005B8B32 /* LaunchScreen.storyboard in Resources */,
 				2539EA7E2950893E005B8B32 /* PrincipalTable.xib in Resources */,
 				2539EA7A295085B0005B8B32 /* CustomCell.xib in Resources */,
@@ -333,6 +348,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2539EA8D2950CBC4005B8B32 /* LoginViewController.swift in Sources */,
 				2539EA852950C354005B8B32 /* ErrorEnum.swift in Sources */,
 				2539EA872950C8B9005B8B32 /* DataLayer.swift in Sources */,
 				2539EA8029508E3E005B8B32 /* CharacterClass.swift in Sources */,

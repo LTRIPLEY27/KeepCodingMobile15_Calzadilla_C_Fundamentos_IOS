@@ -22,7 +22,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         // DEFINIMOS LA INTERFAZ GRÁFICA A INICICALIZAR COMO RAIZ DE TODA LA APLICACIÓN
         
-        window?.rootViewController = PrincipalTable()
+        //window?.rootViewController = PrincipalTable()  --> RETORNA LA TABLA
+        window?.rootViewController = LoginViewController() // --> CONDICIONA LA ENTRADA POR TOKEN
         window?.makeKeyAndVisible()
     }
 
