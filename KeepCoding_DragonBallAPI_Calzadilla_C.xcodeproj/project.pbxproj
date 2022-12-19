@@ -19,6 +19,9 @@
 		2539EA7D2950893E005B8B32 /* PrincipalTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2539EA7B2950893E005B8B32 /* PrincipalTable.swift */; };
 		2539EA7E2950893E005B8B32 /* PrincipalTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2539EA7C2950893E005B8B32 /* PrincipalTable.xib */; };
 		2539EA8029508E3E005B8B32 /* CharacterClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2539EA7F29508E3E005B8B32 /* CharacterClass.swift */; };
+		2539EA822950BFE9005B8B32 /* HttpConect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2539EA812950BFE9005B8B32 /* HttpConect.swift */; };
+		2539EA852950C354005B8B32 /* ErrorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2539EA842950C354005B8B32 /* ErrorEnum.swift */; };
+		2539EA872950C8B9005B8B32 /* DataLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2539EA862950C8B9005B8B32 /* DataLayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,9 @@
 		2539EA7B2950893E005B8B32 /* PrincipalTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipalTable.swift; sourceTree = "<group>"; };
 		2539EA7C2950893E005B8B32 /* PrincipalTable.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrincipalTable.xib; sourceTree = "<group>"; };
 		2539EA7F29508E3E005B8B32 /* CharacterClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterClass.swift; sourceTree = "<group>"; };
+		2539EA812950BFE9005B8B32 /* HttpConect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpConect.swift; sourceTree = "<group>"; };
+		2539EA842950C354005B8B32 /* ErrorEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorEnum.swift; sourceTree = "<group>"; };
+		2539EA862950C8B9005B8B32 /* DataLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +159,9 @@
 		2539EA6F29508290005B8B32 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				2539EA832950C33C005B8B32 /* Enum */,
+				2539EA812950BFE9005B8B32 /* HttpConect.swift */,
+				2539EA862950C8B9005B8B32 /* DataLayer.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -182,6 +191,14 @@
 				2539EA78295085B0005B8B32 /* CustomCell.xib */,
 			);
 			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		2539EA832950C33C005B8B32 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				2539EA842950C354005B8B32 /* ErrorEnum.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,9 +333,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2539EA852950C354005B8B32 /* ErrorEnum.swift in Sources */,
+				2539EA872950C8B9005B8B32 /* DataLayer.swift in Sources */,
 				2539EA8029508E3E005B8B32 /* CharacterClass.swift in Sources */,
 				2539EA3E29508206005B8B32 /* AppDelegate.swift in Sources */,
 				2539EA7D2950893E005B8B32 /* PrincipalTable.swift in Sources */,
+				2539EA822950BFE9005B8B32 /* HttpConect.swift in Sources */,
 				2539EA79295085B0005B8B32 /* CustomCell.swift in Sources */,
 				2539EA4029508206005B8B32 /* SceneDelegate.swift in Sources */,
 			);
