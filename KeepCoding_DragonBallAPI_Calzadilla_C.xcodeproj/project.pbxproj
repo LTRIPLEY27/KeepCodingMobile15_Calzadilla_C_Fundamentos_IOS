@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		2539EA3E29508206005B8B32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2539EA3D29508206005B8B32 /* AppDelegate.swift */; };
 		2539EA4029508206005B8B32 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2539EA3F29508206005B8B32 /* SceneDelegate.swift */; };
-		2539EA4229508206005B8B32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2539EA4129508206005B8B32 /* ViewController.swift */; };
-		2539EA4529508206005B8B32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2539EA4329508206005B8B32 /* Main.storyboard */; };
 		2539EA4729508207005B8B32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2539EA4629508207005B8B32 /* Assets.xcassets */; };
 		2539EA4A29508207005B8B32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2539EA4829508207005B8B32 /* LaunchScreen.storyboard */; };
 		2539EA5529508208005B8B32 /* KeepCoding_DragonBallAPI_Calzadilla_CTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2539EA5429508208005B8B32 /* KeepCoding_DragonBallAPI_Calzadilla_CTests.swift */; };
 		2539EA5F29508208005B8B32 /* KeepCoding_DragonBallAPI_Calzadilla_CUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2539EA5E29508208005B8B32 /* KeepCoding_DragonBallAPI_Calzadilla_CUITests.swift */; };
 		2539EA6129508208005B8B32 /* KeepCoding_DragonBallAPI_Calzadilla_CUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2539EA6029508208005B8B32 /* KeepCoding_DragonBallAPI_Calzadilla_CUITestsLaunchTests.swift */; };
+		2539EA79295085B0005B8B32 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2539EA77295085B0005B8B32 /* CustomCell.swift */; };
+		2539EA7A295085B0005B8B32 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2539EA78295085B0005B8B32 /* CustomCell.xib */; };
+		2539EA7D2950893E005B8B32 /* PrincipalTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2539EA7B2950893E005B8B32 /* PrincipalTable.swift */; };
+		2539EA7E2950893E005B8B32 /* PrincipalTable.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2539EA7C2950893E005B8B32 /* PrincipalTable.xib */; };
+		2539EA8029508E3E005B8B32 /* CharacterClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2539EA7F29508E3E005B8B32 /* CharacterClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +42,6 @@
 		2539EA3A29508206005B8B32 /* KeepCoding_DragonBallAPI_Calzadilla_C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeepCoding_DragonBallAPI_Calzadilla_C.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2539EA3D29508206005B8B32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2539EA3F29508206005B8B32 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2539EA4129508206005B8B32 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2539EA4429508206005B8B32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2539EA4629508207005B8B32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2539EA4929508207005B8B32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2539EA4B29508207005B8B32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +50,11 @@
 		2539EA5A29508208005B8B32 /* KeepCoding_DragonBallAPI_Calzadilla_CUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeepCoding_DragonBallAPI_Calzadilla_CUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2539EA5E29508208005B8B32 /* KeepCoding_DragonBallAPI_Calzadilla_CUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepCoding_DragonBallAPI_Calzadilla_CUITests.swift; sourceTree = "<group>"; };
 		2539EA6029508208005B8B32 /* KeepCoding_DragonBallAPI_Calzadilla_CUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepCoding_DragonBallAPI_Calzadilla_CUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2539EA77295085B0005B8B32 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		2539EA78295085B0005B8B32 /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		2539EA7B2950893E005B8B32 /* PrincipalTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipalTable.swift; sourceTree = "<group>"; };
+		2539EA7C2950893E005B8B32 /* PrincipalTable.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrincipalTable.xib; sourceTree = "<group>"; };
+		2539EA7F29508E3E005B8B32 /* CharacterClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +105,10 @@
 		2539EA3C29508206005B8B32 /* KeepCoding_DragonBallAPI_Calzadilla_C */ = {
 			isa = PBXGroup;
 			children = (
-				2539EA3D29508206005B8B32 /* AppDelegate.swift */,
-				2539EA3F29508206005B8B32 /* SceneDelegate.swift */,
-				2539EA4129508206005B8B32 /* ViewController.swift */,
-				2539EA4329508206005B8B32 /* Main.storyboard */,
+				2539EA702950829D005B8B32 /* Models */,
+				2539EA6F29508290005B8B32 /* Managers */,
+				2539EA6E29508283005B8B32 /* UI */,
+				2539EA6D2950822C005B8B32 /* App */,
 				2539EA4629508207005B8B32 /* Assets.xcassets */,
 				2539EA4829508207005B8B32 /* LaunchScreen.storyboard */,
 				2539EA4B29508207005B8B32 /* Info.plist */,
@@ -125,6 +131,57 @@
 				2539EA6029508208005B8B32 /* KeepCoding_DragonBallAPI_Calzadilla_CUITestsLaunchTests.swift */,
 			);
 			path = KeepCoding_DragonBallAPI_Calzadilla_CUITests;
+			sourceTree = "<group>";
+		};
+		2539EA6D2950822C005B8B32 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				2539EA3D29508206005B8B32 /* AppDelegate.swift */,
+				2539EA3F29508206005B8B32 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		2539EA6E29508283005B8B32 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2539EA71295082E6005B8B32 /* TableView */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		2539EA6F29508290005B8B32 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		2539EA702950829D005B8B32 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2539EA7F29508E3E005B8B32 /* CharacterClass.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2539EA71295082E6005B8B32 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				2539EA7629508579005B8B32 /* CustomCell */,
+				2539EA7B2950893E005B8B32 /* PrincipalTable.swift */,
+				2539EA7C2950893E005B8B32 /* PrincipalTable.xib */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		2539EA7629508579005B8B32 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				2539EA77295085B0005B8B32 /* CustomCell.swift */,
+				2539EA78295085B0005B8B32 /* CustomCell.xib */,
+			);
+			path = CustomCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,8 +289,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2539EA4A29508207005B8B32 /* LaunchScreen.storyboard in Resources */,
+				2539EA7E2950893E005B8B32 /* PrincipalTable.xib in Resources */,
+				2539EA7A295085B0005B8B32 /* CustomCell.xib in Resources */,
 				2539EA4729508207005B8B32 /* Assets.xcassets in Resources */,
-				2539EA4529508206005B8B32 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,8 +316,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2539EA4229508206005B8B32 /* ViewController.swift in Sources */,
+				2539EA8029508E3E005B8B32 /* CharacterClass.swift in Sources */,
 				2539EA3E29508206005B8B32 /* AppDelegate.swift in Sources */,
+				2539EA7D2950893E005B8B32 /* PrincipalTable.swift in Sources */,
+				2539EA79295085B0005B8B32 /* CustomCell.swift in Sources */,
 				2539EA4029508206005B8B32 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,14 +357,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2539EA4329508206005B8B32 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2539EA4429508206005B8B32 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2539EA4829508207005B8B32 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -442,7 +494,6 @@
 				INFOPLIST_FILE = KeepCoding_DragonBallAPI_Calzadilla_C/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -470,7 +521,6 @@
 				INFOPLIST_FILE = KeepCoding_DragonBallAPI_Calzadilla_C/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
