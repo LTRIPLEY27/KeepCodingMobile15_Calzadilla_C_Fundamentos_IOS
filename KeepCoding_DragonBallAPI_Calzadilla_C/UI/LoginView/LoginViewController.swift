@@ -44,6 +44,18 @@ class LoginViewController: UIViewController {
                 LocalData.shared.save(token: token)
                 print("Hello Saiyan Warrior")
                 print(token)
+                
+                // ENVÍO AL HILO PRINCINAPL DE UNA VISTA A ENLAZAR
+                
+                DispatchQueue.main.async {
+                    
+                    UIApplication
+                        .shared
+                        .connectedScenes
+                        .compactMap{($0 as? UIWindowScene)?.keyWindow }   // LLAMADO AREINICAR DESDE EL MAIN LA INTERFICIE DECLARADA
+                        .first?
+                        .rootViewController = PrincipalTable()  // PANTALLA A ENLAZAR
+                }
             }
             else
             {

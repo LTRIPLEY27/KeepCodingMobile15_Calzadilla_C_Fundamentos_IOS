@@ -62,4 +62,42 @@ final class HttpSession {
         
         task.resume()
     }
+    
+    // MÉTODO PARA OBTENER TODOS LOS REGISTROS
+    
+    func allRegisters(token: String?, completion: @escaping ([Character]?, Error?) -> Void ) {
+        guard let url = URL(string: "https://dragonball.keepcoding.education/api/heros/all") else {
+            completion(nil, NetworkError.malformedURL)
+            return
+        }
+        
+        var urlComponents = URLComponents()
+        urlComponents.queryItems = [URLQueryItem(name: "name", value: "")]
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        urlRequest.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")
+        urlRequest.httpBody = urlComponents.query?.data(using: .utf8)
+        
+        let task = URLSession.shared.dataTask(with: urlRequest) { data, _, error in
+            guard error == nil else {
+                completion(nil, error)
+                return
+            }
+            
+            guard let data = data else {
+                completion(nil, NetworkError.noData)
+                return
+            }
+            
+            guard let characters = try? JSONDecoder().decode([Character].self, from: data) else {
+                completion(nil, NetworkError.decodingFailed)
+                return
+            }
+            
+            completion(characters, nil)
+        }
+        
+        task.resume()
+    }
 }

@@ -6,11 +6,12 @@
 //
 
 import Foundation
-import UIKit
 
-public struct Character {
+struct Character: Codable {
     
-    var name : String?
-    var title : String?
-    var image : UIImage?
+    let id: String
+    let name : String
+    let photo : String
+    let description : String
+    let isFavorite : Bool
 }
