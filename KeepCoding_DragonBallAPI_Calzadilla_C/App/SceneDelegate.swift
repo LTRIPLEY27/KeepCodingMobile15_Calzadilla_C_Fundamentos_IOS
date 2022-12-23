@@ -22,17 +22,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         // DEFINIMOS LA INTERFAZ GRÁFICA A INICICALIZAR COMO RAIZ DE TODA LA APLICACIÓN
         
-        //window?.rootViewController = PrincipalTable()  --> RETORNA LA TABLA
+        
         
         // ANEXO DE CONDICIONAL PARA ENVIAR UNA INTERFAZ (SE PUDE TRABAJAR MUCHÍSIMO MÁS)
         
         if !LocalData.shared.isUserLogged() {
-            
             window?.rootViewController = LoginViewController() // --> CONDICIONA LA ENTRADA POR TOKEN
         }
         else
         {
-            window?.rootViewController = PrincipalTable()
+            window?.rootViewController = TabController()
+            //window?.rootViewController = PrincipalTable()
         }
         window?.makeKeyAndVisible()
     }

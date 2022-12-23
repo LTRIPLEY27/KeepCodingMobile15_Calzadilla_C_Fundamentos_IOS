@@ -7,22 +7,11 @@
 
 import UIKit
 
-struct CustomItem {
-    let image: UIImage
-    let text: String
-}
-
 // IMPLEMENTACIÓN DE INTERFACES
 class PrincipalTable: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     @IBOutlet weak var tableBase: UITableView!
-    
-    /*private var characters = [
-     Character(name : "Goku", title: "Sayayin", image: UIImage(systemName: "trash.circle")!),
-     Character(name : "Gohan", title: "Sayayin Junior", image: UIImage(systemName: "terminal")!),
-     Character(name : "Veggeta", title: "Prince Sayayin", image: UIImage(systemName: "book.closed")!),
-     ]*/
     
     var characters : [Character] = []
     
@@ -45,20 +34,22 @@ class PrincipalTable: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         // BLOQUE DE INICIO REQUEST
         // REALIZAMOS LA REUEST CON ENVÍO DEL TOKEN
-        HttpSession.shared.allRegisters(token: token) { [weak self] allRegisters, error in
-            
+        HttpSession.shared.allRegisters(token: token) { [weak self] all, error in
+            // LA VARIABLE REFIERE AL TABLEVIEW CONTROLLER --> 'Self'
             guard let self = self else { return }
             
-            if let allRegisters = allRegisters {
-                self.characters = allRegisters
-                
+            if let all = all {
+                self.characters = all
+
+                // ENVÍO LA IMPRESIÓN DEL REQUEST EN EL HILO PRINCIPAL
                 DispatchQueue.main.async {
                     self.tableBase.reloadData()
                 }
             }
             else
             {
-                print("Error fetching heroes : ", error?.localizedDescription ?? "")
+                print("Error fetching heroes : ", error?.localizedDescription.self ?? "")
+                print(self.characters[0].name)
             }
             
         }
@@ -76,16 +67,21 @@ class PrincipalTable: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cel = tableBase.dequeueReusableCell(withIdentifier: "prova", for: indexPath) as! CustomCell
         
         let itemCustom = characters[indexPath.row]
+        
         cel.nameCharacter.text = itemCustom.name
-        //cel.text = itemCustom.name
-        //cel.imageCharacter.setImage(url: itemCustom.photo)
         cel.imageCharacter.setImage(url: itemCustom.photo)
+        cel.imageCharacter.setImage(url: itemCustom.photo)
+        cel.descriptionCharacter.text = itemCustom.description
         
         cel.accessoryType = .disclosureIndicator
         cel.selectionStyle = .none
         
         return cel
         
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 140
     }
 }
     /*
@@ -94,6 +90,7 @@ class PrincipalTable: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }*/
     
+
     extension UIImageView {
         func setImage(url: String) {
             guard let url = URL(string: url) else { return }

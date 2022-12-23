@@ -6,9 +6,10 @@
 //
 
 import Foundation
-
+// PERSISTENCIA O CONFIG ARCHIVE
 final class LocalData {
     private static let token = "token"
+    private static let allCharacters = "characters" // --> ALAMCENA LOS REGISTROS DE LA API EN EL ARCHIVO CONFIG DEL PROYECTO
     
     static let shared = LocalData()
     
@@ -29,4 +30,23 @@ final class LocalData {
     func isUserLogged() -> Bool {
         return !getToken().isEmpty
     }
+    
+    // FUNCIÓN DE ALMACENAJE DE LOS REGISTROS EN LA DATALOCAL
+    func charactersOnLocal() -> [Character] {
+        // USO DE LOS USER DEFAULTS PARA REALIZAR LA CONSULTA
+        if let addCharacter = UserDefaults.standard.object(forKey: Self.allCharacters) as? Data {
+            do {
+                let saveCharacter = try JSONDecoder().decode([Character].self, from: addCharacter)
+                return saveCharacter
+            }
+            catch
+            {
+                print("Error adding data to local")
+                return []
+            }
+        } else {
+                return []
+                }
+    }
+
 }

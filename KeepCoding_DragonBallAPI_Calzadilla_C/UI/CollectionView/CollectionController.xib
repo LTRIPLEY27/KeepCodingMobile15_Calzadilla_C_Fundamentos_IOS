@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CollectionController" customModule="KeepCoding_DragonBallAPI_Calzadilla_C" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="egs-j3-CwT" id="qze-Js-Jbb"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dragon" translatesAutoresizingMaskIntoConstraints="NO" id="dDE-1W-frB">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                </imageView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="egs-j3-CwT">
+                    <rect key="frame" x="25" y="84" width="343" height="714"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Q63-y0-sJM">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="dDE-1W-frB" secondAttribute="bottom" id="0Jh-rq-FvD"/>
+                <constraint firstItem="egs-j3-CwT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="0um-9F-jDT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="egs-j3-CwT" secondAttribute="bottom" constant="25" id="1rF-pU-a0Z"/>
+                <constraint firstItem="dDE-1W-frB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="2Ae-Ch-VMS"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="egs-j3-CwT" secondAttribute="trailing" constant="20" id="Pjr-Ti-3mF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="egs-j3-CwT" secondAttribute="trailing" constant="15" id="Tei-8W-R7C"/>
+                <constraint firstItem="dDE-1W-frB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Vae-6u-uwn"/>
+                <constraint firstItem="egs-j3-CwT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="YkF-0P-9Oe"/>
+                <constraint firstItem="egs-j3-CwT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="ZMK-4o-5ez"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="egs-j3-CwT" secondAttribute="bottom" constant="15" id="aKs-X2-HBe"/>
+                <constraint firstItem="egs-j3-CwT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="bxh-WT-HAY"/>
+                <constraint firstItem="egs-j3-CwT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="ckN-6n-eV9"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="egs-j3-CwT" secondAttribute="bottom" constant="20" id="nUk-DK-0HT"/>
+                <constraint firstItem="egs-j3-CwT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="vRQ-0j-vB8"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="egs-j3-CwT" secondAttribute="trailing" constant="25" id="wjT-B2-188"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dDE-1W-frB" secondAttribute="trailing" id="zwT-Nh-lIi"/>
+            </constraints>
+            <point key="canvasLocation" x="132" y="-11"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="dragon" width="800" height="800"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

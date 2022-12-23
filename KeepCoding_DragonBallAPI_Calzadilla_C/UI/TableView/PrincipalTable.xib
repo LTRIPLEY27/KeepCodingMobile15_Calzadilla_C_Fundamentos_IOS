@@ -19,23 +19,30 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nK2-Lj-3K5">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.34999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dragon" translatesAutoresizingMaskIntoConstraints="NO" id="bxu-wI-TyT">
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="nK2-Lj-3K5">
+                    <rect key="frame" x="33" y="119" width="319" height="670"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
+                    <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="nK2-Lj-3K5" secondAttribute="bottom" id="1vg-Nu-6Ca"/>
-                <constraint firstItem="nK2-Lj-3K5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="1x4-Ql-mBO"/>
-                <constraint firstItem="nK2-Lj-3K5" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="KRJ-xG-R4j"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nK2-Lj-3K5" secondAttribute="trailing" id="egc-dZ-Wau"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="bxu-wI-TyT" secondAttribute="bottom" id="Ai9-yv-UfV"/>
+                <constraint firstItem="bxu-wI-TyT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Vv4-Nd-ghG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bxu-wI-TyT" secondAttribute="trailing" id="c4Y-km-hyx"/>
+                <constraint firstItem="bxu-wI-TyT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="jeU-fi-0Wt"/>
             </constraints>
             <point key="canvasLocation" x="127.48091603053435" y="-12.67605633802817"/>
         </view>
     </objects>
     <resources>
+        <image name="dragon" width="800" height="800"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

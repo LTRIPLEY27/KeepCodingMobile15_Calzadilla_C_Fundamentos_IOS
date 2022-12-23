@@ -77,7 +77,9 @@ final class HttpSession {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
         urlRequest.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")
+        
         urlRequest.httpBody = urlComponents.query?.data(using: .utf8)
+   
         
         let task = URLSession.shared.dataTask(with: urlRequest) { data, _, error in
             guard error == nil else {
@@ -99,5 +101,6 @@ final class HttpSession {
         }
         
         task.resume()
+        
     }
 }
