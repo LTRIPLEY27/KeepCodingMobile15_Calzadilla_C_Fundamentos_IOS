@@ -20,6 +20,7 @@ class CollectionController: UIViewController, UICollectionViewDelegate, UICollec
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        title = "Dragon Ball API"
         // LLAMAMOS AL ARCHIVE CONFIG CON LA DATA LOCAL ALMACENADA
         navigationItem.title = "Characters"
         characters = LocalData.shared.charactersOnLocal()
@@ -50,12 +51,12 @@ class CollectionController: UIViewController, UICollectionViewDelegate, UICollec
     // DIMENSIONES DE LA CELDA
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let itemsRow: CGFloat = 3
+        let itemsRow: CGFloat = 2
         let spacing: CGFloat = 12
         let totalSpacing: CGFloat = (itemsRow - 1) * spacing
         let finalWidth = (collectionView.frame.width - totalSpacing) / itemsRow
         
-        return CGSize(width: finalWidth, height: 120)
+        return CGSize(width: finalWidth, height: 160)
     }
     /*
      func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

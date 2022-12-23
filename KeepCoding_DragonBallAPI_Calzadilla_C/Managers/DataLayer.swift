@@ -31,6 +31,14 @@ final class LocalData {
         return !getToken().isEmpty
     }
     
+    // SOBRECARGA DE MÉTODOS DE LA FUNCIÓN SAVE
+    // SALIMOS DE LOS BITS A CODIFICAR
+    func save(characters : [Character]) {
+        if let encodedCharacter = try? JSONEncoder().encode(characters) {
+            UserDefaults.standard.set(encodedCharacter, forKey: Self.allCharacters)
+        }
+    }
+    
     // FUNCIÓN DE ALMACENAJE DE LOS REGISTROS EN LA DATALOCAL
     func charactersOnLocal() -> [Character] {
         // USO DE LOS USER DEFAULTS PARA REALIZAR LA CONSULTA

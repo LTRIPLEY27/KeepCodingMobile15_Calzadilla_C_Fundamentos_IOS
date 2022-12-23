@@ -11,52 +11,46 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellCollection" id="gTV-IL-0wX" customClass="CollectionViewCell" customModule="KeepCoding_DragonBallAPI_Calzadilla_C" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="250" height="193"/>
+            <rect key="frame" x="0.0" y="0.0" width="295" height="203"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="250" height="193"/>
+                <rect key="frame" x="0.0" y="0.0" width="295" height="203"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TAK-sw-ipZ">
-                        <rect key="frame" x="0.0" y="0.0" width="250" height="193"/>
+                        <rect key="frame" x="0.0" y="0.0" width="295" height="203"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wwy-V5-tgG">
-                                <rect key="frame" x="100" y="16" width="60" height="60"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fcT-yM-MfY">
+                                <rect key="frame" x="8" y="8" width="279" height="130"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="d81-M5-T1y"/>
-                                    <constraint firstAttribute="height" constant="60" id="hUd-gz-yun"/>
-                                    <constraint firstAttribute="width" constant="60" id="jr9-Z2-zbC"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="pQF-ei-bp4"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="260" id="RMN-Db-hNx"/>
+                                    <constraint firstAttribute="width" constant="250" id="UCu-5U-iP5"/>
+                                    <constraint firstAttribute="height" constant="130" id="yem-7D-ILB"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t56-GA-dlc">
-                                <rect key="frame" x="104" y="106" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFc-on-kLx">
+                                <rect key="frame" x="8" y="146" width="279" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="5g9-gP-43b"/>
+                                    <constraint firstAttribute="height" constant="30" id="LRC-q4-und"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="wwy-V5-tgG" secondAttribute="bottom" constant="75" id="6XN-v5-gGG"/>
-                            <constraint firstItem="wwy-V5-tgG" firstAttribute="centerX" secondItem="TAK-sw-ipZ" secondAttribute="centerX" id="BE5-Ze-1C0"/>
-                            <constraint firstAttribute="trailing" secondItem="wwy-V5-tgG" secondAttribute="trailing" constant="100" id="IdF-6E-kYX"/>
-                            <constraint firstItem="wwy-V5-tgG" firstAttribute="centerX" secondItem="TAK-sw-ipZ" secondAttribute="centerX" id="Jby-Wx-GAg"/>
-                            <constraint firstItem="wwy-V5-tgG" firstAttribute="leading" secondItem="TAK-sw-ipZ" secondAttribute="leading" constant="100" id="M6J-ke-CCK"/>
-                            <constraint firstItem="wwy-V5-tgG" firstAttribute="leading" secondItem="TAK-sw-ipZ" secondAttribute="leading" constant="90" id="MVM-Fm-NdC"/>
-                            <constraint firstItem="wwy-V5-tgG" firstAttribute="top" secondItem="TAK-sw-ipZ" secondAttribute="top" constant="16" id="Myz-CC-7jo"/>
-                            <constraint firstItem="wwy-V5-tgG" firstAttribute="leading" secondItem="TAK-sw-ipZ" secondAttribute="leading" constant="100" id="PPV-Az-Fwm"/>
-                            <constraint firstAttribute="trailing" secondItem="wwy-V5-tgG" secondAttribute="trailing" constant="190" id="PgJ-ur-yoQ"/>
-                            <constraint firstAttribute="bottom" secondItem="wwy-V5-tgG" secondAttribute="bottom" constant="117" id="Ttm-e2-gA8"/>
-                            <constraint firstItem="wwy-V5-tgG" firstAttribute="centerY" secondItem="TAK-sw-ipZ" secondAttribute="centerY" id="amw-B5-1RC"/>
-                            <constraint firstAttribute="trailing" secondItem="wwy-V5-tgG" secondAttribute="trailing" constant="90" id="b4F-NY-43X"/>
-                            <constraint firstItem="wwy-V5-tgG" firstAttribute="leading" secondItem="TAK-sw-ipZ" secondAttribute="leading" constant="60" id="d7e-Wi-b5r"/>
-                            <constraint firstItem="wwy-V5-tgG" firstAttribute="top" secondItem="TAK-sw-ipZ" secondAttribute="top" constant="16" id="hAq-ID-RJc"/>
-                            <constraint firstItem="wwy-V5-tgG" firstAttribute="leading" secondItem="TAK-sw-ipZ" secondAttribute="leading" constant="130" id="iTi-qq-nxx"/>
-                            <constraint firstAttribute="trailing" secondItem="wwy-V5-tgG" secondAttribute="trailing" constant="60" id="kay-pP-E5T"/>
-                            <constraint firstItem="t56-GA-dlc" firstAttribute="centerX" secondItem="TAK-sw-ipZ" secondAttribute="centerX" id="kyM-mH-HhY"/>
-                            <constraint firstItem="wwy-V5-tgG" firstAttribute="top" secondItem="TAK-sw-ipZ" secondAttribute="top" constant="16" id="mRe-iQ-yUP"/>
-                            <constraint firstItem="t56-GA-dlc" firstAttribute="top" secondItem="wwy-V5-tgG" secondAttribute="bottom" constant="30" id="ukM-Er-mRs"/>
+                            <constraint firstItem="BFc-on-kLx" firstAttribute="top" secondItem="fcT-yM-MfY" secondAttribute="bottom" constant="8" id="67Y-wC-wsd"/>
+                            <constraint firstItem="BFc-on-kLx" firstAttribute="leading" secondItem="TAK-sw-ipZ" secondAttribute="leading" constant="8" id="6zG-59-yvw"/>
+                            <constraint firstItem="fcT-yM-MfY" firstAttribute="leading" secondItem="TAK-sw-ipZ" secondAttribute="leading" constant="8" id="Mm6-Ge-lb4"/>
+                            <constraint firstAttribute="trailing" secondItem="fcT-yM-MfY" secondAttribute="trailing" constant="8" id="ODO-d7-KxL"/>
+                            <constraint firstAttribute="trailing" secondItem="BFc-on-kLx" secondAttribute="trailing" constant="8" id="Tfg-SR-4Wl"/>
+                            <constraint firstAttribute="trailing" secondItem="fcT-yM-MfY" secondAttribute="trailing" constant="8" id="bZf-o7-J5z"/>
+                            <constraint firstAttribute="bottom" secondItem="BFc-on-kLx" secondAttribute="bottom" constant="8" id="iiL-a7-shc"/>
+                            <constraint firstItem="fcT-yM-MfY" firstAttribute="top" secondItem="TAK-sw-ipZ" secondAttribute="top" constant="8" id="j8M-29-GLi"/>
+                            <constraint firstAttribute="trailing" secondItem="fcT-yM-MfY" secondAttribute="trailing" constant="8" id="nkB-15-eMe"/>
+                            <constraint firstItem="BFc-on-kLx" firstAttribute="top" secondItem="fcT-yM-MfY" secondAttribute="bottom" constant="8" id="xAU-z5-tGp"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -68,12 +62,12 @@
                 <constraint firstAttribute="bottom" secondItem="TAK-sw-ipZ" secondAttribute="bottom" id="fxU-Yp-8El"/>
                 <constraint firstAttribute="trailing" secondItem="TAK-sw-ipZ" secondAttribute="trailing" id="kpn-ay-NNe"/>
             </constraints>
-            <size key="customSize" width="250" height="193"/>
+            <size key="customSize" width="295" height="203"/>
             <connections>
-                <outlet property="imageCharacter" destination="wwy-V5-tgG" id="4qC-Zc-lW8"/>
-                <outlet property="titleCharacter" destination="t56-GA-dlc" id="D5F-7Y-zTQ"/>
+                <outlet property="imageCharacter" destination="fcT-yM-MfY" id="SYw-15-Wgp"/>
+                <outlet property="titleCharacter" destination="BFc-on-kLx" id="k81-aP-Icb"/>
             </connections>
-            <point key="canvasLocation" x="277.86259541984731" y="100.35211267605634"/>
+            <point key="canvasLocation" x="312.21374045801525" y="103.87323943661973"/>
         </collectionViewCell>
     </objects>
     <resources>

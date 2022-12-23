@@ -22,13 +22,19 @@ class PrincipalTable: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableBase.delegate = self
         tableBase.dataSource = self
         
+        title = "Dragon Ball API"
         // LLAMAMOS A LA CELDA A USAR
         let xib = UINib(nibName: "CustomCell", bundle: nil)
         
         // REGISTRAMOS
         tableBase.register(xib, forCellReuseIdentifier: "prova")
         
-        
+        // LLAMADO A LA FUNCIÓN PARA REALIZAR LA REQUEST A LA API
+        makeTheConsult()
+    }
+    
+    // FUNCION QUE CONECTA LA REQUESR MEDIANTE EL LLAMADO DEL MANAGER
+    func makeTheConsult() {
         // VERIFICACIÓN DEL TOKEN
         let token = LocalData.shared.getToken()
         
@@ -40,7 +46,10 @@ class PrincipalTable: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             if let all = all {
                 self.characters = all
-
+                
+                // INVOCAMOS AL MÉTODO LOCAL DATA LAYER PARA IMPRIMIR EL ARRAY DEL REQUEST
+                LocalData().save(characters: all)
+                
                 // ENVÍO LA IMPRESIÓN DEL REQUEST EN EL HILO PRINCIPAL
                 DispatchQueue.main.async {
                     self.tableBase.reloadData()
@@ -53,9 +62,7 @@ class PrincipalTable: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
             
         }
-        
     }
-    
     
     // FUNCIONES INHERENTES A LA INTERFACE 'UITableDataSource'
     
@@ -84,36 +91,35 @@ class PrincipalTable: UIViewController, UITableViewDelegate, UITableViewDataSour
         return 140
     }
 }
-    /*
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let character = characters[indexPath.row]
-        
-    }*/
-    
+/*
+ func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+ let character = characters[indexPath.row]
+ 
+ }*/
 
-    extension UIImageView {
-        func setImage(url: String) {
-            guard let url = URL(string: url) else { return }
+
+extension UIImageView {
+    func setImage(url: String) {
+        guard let url = URL(string: url) else { return }
+        
+        downloadImage(url: url) { [weak self] image in
+            guard let self = self else { return }
             
-            downloadImage(url: url) { [weak self] image in
-                guard let self = self else { return }
-                
-                DispatchQueue.main.async {
-                    self.image = image
-                }
+            DispatchQueue.main.async {
+                self.image = image
             }
         }
-        
-        private func downloadImage(url: URL, completion: @escaping (UIImage?) -> Void) {
-            URLSession.shared.dataTask(with: url) {data, response, error in
-                
-                guard let data = data, let image = UIImage(data: data) else {
-                    completion(nil)
-                    return
-                }
-                
-                completion(image)
-            }.resume()
-        }
     }
-//}
+    
+    private func downloadImage(url: URL, completion: @escaping (UIImage?) -> Void) {
+        URLSession.shared.dataTask(with: url) {data, response, error in
+            
+            guard let data = data, let image = UIImage(data: data) else {
+                completion(nil)
+                return
+            }
+            
+            completion(image)
+        }.resume()
+    }
+}
