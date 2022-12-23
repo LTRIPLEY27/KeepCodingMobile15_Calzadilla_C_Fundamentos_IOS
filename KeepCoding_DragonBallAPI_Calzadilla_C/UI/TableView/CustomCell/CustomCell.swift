@@ -11,9 +11,10 @@ class CustomCell: UITableViewCell {
 
     /* IBOutlet para cada detalle de la celda */
 
-    @IBOutlet weak var descriptionCharacter: UILabel!
     @IBOutlet weak var imageCharacter: UIImageView!
+    
     @IBOutlet weak var nameCharacter: UILabel!
+    @IBOutlet weak var descriptionCharacter: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
        
