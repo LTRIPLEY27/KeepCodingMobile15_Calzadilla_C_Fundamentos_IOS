@@ -20,7 +20,7 @@ class CollectionController: UIViewController, UICollectionViewDelegate, UICollec
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        title = "Dragon Ball API"
+        //title = "Dragon Ball API"
         // LLAMAMOS AL ARCHIVE CONFIG CON LA DATA LOCAL ALMACENADA
         navigationItem.title = "Characters"
         characters = LocalData.shared.charactersOnLocal()
@@ -58,9 +58,14 @@ class CollectionController: UIViewController, UICollectionViewDelegate, UICollec
         
         return CGSize(width: finalWidth, height: 160)
     }
-    /*
-     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-     let character = characters[indexPath.row]
-     let detailsView =
-     }*/
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let character = characters[indexPath.row]
+        let detailsView = DetailController()
+        detailsView.character = character
+        
+        navigationController?.pushViewController(detailsView, animated: true)
+    }
 }

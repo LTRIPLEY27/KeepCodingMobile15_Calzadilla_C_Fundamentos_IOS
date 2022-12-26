@@ -22,7 +22,7 @@ class PrincipalTable: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableBase.delegate = self
         tableBase.dataSource = self
         
-        title = "Dragon Ball API"
+        navigationItem.title = "Dragon Ball API"
         // LLAMAMOS A LA CELDA A USAR
         let xib = UINib(nibName: "CustomCell", bundle: nil)
         
@@ -90,12 +90,17 @@ class PrincipalTable: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 140
     }
+    
+    // FUNCIÓN QUE TOMA EL ITEM EXACTO PULSADO Y ENVÍA AL DETAIL DE ESE PERSONAJE
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let character = characters[indexPath.row]
+        let detailsView = DetailController()
+        detailsView.character = character
+        navigationController?.pushViewController(detailsView, animated: true)
+    }
 }
-/*
- func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
- let character = characters[indexPath.row]
- 
- }*/
+
+
 
 
 extension UIImageView {

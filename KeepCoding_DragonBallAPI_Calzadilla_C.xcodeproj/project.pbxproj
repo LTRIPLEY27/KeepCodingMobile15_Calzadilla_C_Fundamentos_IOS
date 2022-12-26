@@ -29,6 +29,9 @@
 		25CC9C1C2954C64B004507A5 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CC9C1B2954C64B004507A5 /* TabController.swift */; };
 		25CC9C222954CFD0004507A5 /* CollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CC9C202954CFCF004507A5 /* CollectionController.swift */; };
 		25CC9C232954CFD0004507A5 /* CollectionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25CC9C212954CFD0004507A5 /* CollectionController.xib */; };
+		25ED3E6A29570DF50077F256 /* Transformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25ED3E6929570DF50077F256 /* Transformation.swift */; };
+		25EEB8A129561D9400FE2508 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25EEB89F29561D9400FE2508 /* DetailController.swift */; };
+		25EEB8A229561D9400FE2508 /* DetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25EEB8A029561D9400FE2508 /* DetailController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +78,9 @@
 		25CC9C1B2954C64B004507A5 /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		25CC9C202954CFCF004507A5 /* CollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionController.swift; sourceTree = "<group>"; };
 		25CC9C212954CFD0004507A5 /* CollectionController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionController.xib; sourceTree = "<group>"; };
+		25ED3E6929570DF50077F256 /* Transformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transformation.swift; sourceTree = "<group>"; };
+		25EEB89F29561D9400FE2508 /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
+		25EEB8A029561D9400FE2508 /* DetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +171,7 @@
 		2539EA6E29508283005B8B32 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				25EEB89E29561D4C00FE2508 /* DetailView */,
 				25CC9C1D2954CDF1004507A5 /* CollectionView */,
 				25CC9C182954C591004507A5 /* TabBarController */,
 				2539EA882950CB5D005B8B32 /* LoginView */,
@@ -187,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				2539EA7F29508E3E005B8B32 /* CharacterClass.swift */,
+				25ED3E6929570DF50077F256 /* Transformation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -252,6 +260,15 @@
 				25C59B1C2955A1B400140F98 /* CollectionViewCell.xib */,
 			);
 			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		25EEB89E29561D4C00FE2508 /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				25EEB89F29561D9400FE2508 /* DetailController.swift */,
+				25EEB8A029561D9400FE2508 /* DetailController.xib */,
+			);
+			path = DetailView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,6 +379,7 @@
 				25C59B1E2955A1B400140F98 /* CollectionViewCell.xib in Resources */,
 				25CC9C232954CFD0004507A5 /* CollectionController.xib in Resources */,
 				2539EA8E2950CBC4005B8B32 /* LoginViewController.xib in Resources */,
+				25EEB8A229561D9400FE2508 /* DetailController.xib in Resources */,
 				2539EA4A29508207005B8B32 /* LaunchScreen.storyboard in Resources */,
 				2539EA7E2950893E005B8B32 /* PrincipalTable.xib in Resources */,
 				2539EA7A295085B0005B8B32 /* CustomCell.xib in Resources */,
@@ -389,6 +407,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25ED3E6A29570DF50077F256 /* Transformation.swift in Sources */,
 				2539EA8D2950CBC4005B8B32 /* LoginViewController.swift in Sources */,
 				2539EA852950C354005B8B32 /* ErrorEnum.swift in Sources */,
 				25C59B1D2955A1B400140F98 /* CollectionViewCell.swift in Sources */,
@@ -397,6 +416,7 @@
 				2539EA3E29508206005B8B32 /* AppDelegate.swift in Sources */,
 				25CC9C1C2954C64B004507A5 /* TabController.swift in Sources */,
 				2539EA7D2950893E005B8B32 /* PrincipalTable.swift in Sources */,
+				25EEB8A129561D9400FE2508 /* DetailController.swift in Sources */,
 				2539EA822950BFE9005B8B32 /* HttpConect.swift in Sources */,
 				2539EA79295085B0005B8B32 /* CustomCell.swift in Sources */,
 				2539EA4029508206005B8B32 /* SceneDelegate.swift in Sources */,

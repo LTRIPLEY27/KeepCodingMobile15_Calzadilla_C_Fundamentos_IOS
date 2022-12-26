@@ -11,6 +11,7 @@ final class HttpSession {
     
     static let shared = HttpSession()
     
+    private var objects: [AnyObject] = []
     
     // FUNCIÓN PARA CAPTURAR EL TOKEN
     func login(email : String, password : String, completion : @escaping (String?, Error?) -> Void) {
@@ -79,7 +80,7 @@ final class HttpSession {
         urlRequest.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")
         
         urlRequest.httpBody = urlComponents.query?.data(using: .utf8)
-   
+        
         
         let task = URLSession.shared.dataTask(with: urlRequest) { data, _, error in
             guard error == nil else {
@@ -103,4 +104,54 @@ final class HttpSession {
         task.resume()
         
     }
+     
+    
+    // FUNCIÓN PARA OBTENER LOS REGISTROS DE TRANSFORMACIONES
+    func getTransformations(token : String?, characterId : String?, completion : @escaping([Transformation]?, Error?) -> Void) {
+        
+        guard let url = URL(string: "https://dragonball.keepcoding.education/api/heros/tranformations") else {
+            completion(nil, NetworkError.malformedURL)
+            return
+        }
+        
+        var urlComponents = URLComponents()
+        urlComponents.queryItems = [URLQueryItem(name: "id", value: characterId ?? "")]
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        urlRequest.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")
+        urlRequest.httpBody = urlComponents.query?.data(using: .utf8)
+        
+        
+        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+            
+            guard error == nil else {
+                completion(nil, error)
+                return
+            }
+            
+            guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+                let statusCode = (response as? HTTPURLResponse)?.statusCode
+                completion(nil, NetworkError.statusCode(code: statusCode))
+                print("Error loading URL: Status error --> ", (response as? HTTPURLResponse)?.statusCode ?? -1)
+                return
+            }
+            
+            guard let data = data else {
+                completion(nil, NetworkError.noData)
+                return
+            }
+            
+            guard let transform = try? JSONDecoder().decode([Transformation].self, from: data) else {
+                completion(nil, NetworkError.decodingFailed)
+                return
+            }
+            
+            completion(transform, nil)
+        }
+        
+        task.resume()
+    }
+    
+
 }
