@@ -10,9 +10,9 @@ import Foundation
 // LAS VARIABLES DEBEN DE COINCIDIR EN NOMBRE CON LA API, A MENOS DE QUE SE MARQUE OPCIONAL
 struct Character: Codable {
     
-    let id : String
-    let name : String
-    let photo : String
-    let description : String
-    let favorite : Bool
+    var id : String
+    var name : String
+    var photo : String
+    var description : String
+    var favorite : Bool
 }

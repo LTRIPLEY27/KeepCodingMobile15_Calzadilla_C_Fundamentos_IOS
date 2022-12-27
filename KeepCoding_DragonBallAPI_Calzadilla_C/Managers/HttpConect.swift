@@ -197,4 +197,53 @@ final class HttpSession {
         
         task.resume()
     }
+    
+    // MÉTODO PARA AGREGAR UN NUEVO PERSONAJE
+    func addNew(token: String?, name : String?, description : String?, photo : String?, completion : @escaping(Character?, Error?) -> Void) {
+        
+        guard let add = URL(string: "https://dragonball.keepcoding.education/api/heros/create") else {
+            completion(nil, NetworkError.malformedURL)
+            return
+        }
+        
+        var urlComponents = URLComponents()
+        urlComponents.queryItems = [URLQueryItem(name: "name", value: name ?? ""),
+                                    URLQueryItem(name: "description", value: description ?? ""),
+                                    URLQueryItem(name: "photo", value: photo ?? "")
+                                    ]
+        
+        var urlRequest = URLRequest(url: add)
+        urlRequest.httpMethod = "POST"
+        urlRequest.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")
+        urlRequest.httpBody = urlComponents.query?.data(using: .utf8)
+        
+        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+            
+            guard error == nil else {
+                completion(nil, error)
+                return
+            }
+            
+            guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+                let statusCode = (response as? HTTPURLResponse)?.statusCode
+                completion(nil, NetworkError.statusCode(code: statusCode))
+                print("Error loading URL: Status error --> ", (response as? HTTPURLResponse)?.statusCode ?? -1)
+                return
+            }
+            
+            guard let data = data else {
+                completion(nil, NetworkError.noData)
+                return
+            }
+            
+            guard let charactter = try? JSONDecoder().decode(Character.self, from: data) else {
+                completion(nil, NetworkError.decodingFailed)
+                return
+            }
+            
+            completion(charactter, nil)
+        }
+        
+        task.resume()
+    }
 }

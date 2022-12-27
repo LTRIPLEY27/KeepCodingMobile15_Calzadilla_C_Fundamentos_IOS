@@ -50,9 +50,13 @@ class TabController: UITabBarController {
         navControllerC.tabBarItem = UITabBarItem(title: "Favs", image: tabImageC, tag: 3)
         
 
+        let navControllerD = UINavigationController(rootViewController : NewCharacterController())
+        let tabImageD = UIImage(systemName: "goforward.plus")
+        
+        navControllerD.tabBarItem = UITabBarItem(title: "Add", image: tabImageD, tag: 4)
         
         // ARRAY DE ITEMS A CONTENER EN EL TAB, LE INDICAMREMOS, CUANTOS DESEEMOS
-        viewControllers = [navControllerA, navControllerB, navControllerC]
+        viewControllers = [navControllerA, navControllerB, navControllerC, navControllerD]
     }
     
     private func setLayout(){
