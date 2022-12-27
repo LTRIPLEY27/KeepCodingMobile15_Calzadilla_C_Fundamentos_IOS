@@ -32,12 +32,6 @@ final class LocalData {
         return !getToken().isEmpty
     }
     
-    /*//func saveFavs(favs : [Character]) {
-    func saveFavs(favs : [Any]) {
-        return UserDefaults.standard.set(favs, forKey: Self.favs)
-    }
-    */
-    
     // SOBRECARGA DE MÉTODOS DE LA FUNCIÓN SAVE
     // realizamos la función con genéricos para reutilizar
     func save<T : Encodable>(characters : [T]) {
@@ -64,25 +58,5 @@ final class LocalData {
                 }
     }
     
-
-    /*//func getFavs() -> [Character] {
-    func getFavs() -> [Any] {
-        //return UserDefaults.standard.array(forKey: Self.favs) ?? []
-        //return UserDefaults.standard.object(forKey: Self.favs) ?? []
-        if let addCharacter = UserDefaults.standard.object(forKey: Self.favs) as? [Any] {
-            do {
-                let saveCharacter = addCharacter
-                return saveCharacter
-            }
-            catch
-            {
-                print("Error adding data to local")
-                return []
-            }
-        } else {
-                return []
-                }
-    
-    }*/
     
 }

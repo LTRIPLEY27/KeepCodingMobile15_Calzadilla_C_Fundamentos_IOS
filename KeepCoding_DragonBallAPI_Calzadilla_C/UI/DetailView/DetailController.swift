@@ -28,7 +28,7 @@ class DetailController: UIViewController {
         super.viewDidLoad()
         
         // EL BOTON NO SE MUESTRA, ÚNICAMENTE SEGÚN EL PERSONAJE Y LA DISPOSICIÓN DE LA TRANSFORMACIÓN
-        transformationsCharacter.alpha = 1
+        transformationsCharacter.alpha = 0
         
         transformDetail()
     }
@@ -40,7 +40,7 @@ class DetailController: UIViewController {
             imageCharacter.setImage(url: character.photo)
             nameCharacter.text = character.name
             descriptionCharacter.text = character.description
-            print("aca")
+            favoriteCharacter.alpha = 0
             makeTheRequest()
         }
         else {
@@ -48,8 +48,6 @@ class DetailController: UIViewController {
             imageCharacter.setImage(url: transformation.photo)
             nameCharacter.text = transformation.name
             descriptionCharacter.text = transformation.description
-            favoriteCharacter.alpha = 0
-            
         }
     }
 
@@ -91,8 +89,20 @@ class DetailController: UIViewController {
     // ACTION DEL BUTTON 'Like' PARA AGREGAR AL PERSONAJE COMO ME GUSTA
     @IBAction func pushFavorite(_ sender: Any) {
         //let characters : [Character] = LocalData.shared.charactersOnLocal()
+        let token = LocalData.shared.getToken()
         
-        
-        
+        HttpSession.shared.getTheFavs(token: token, idHeroe: transformation.hero["id"]) { [weak self] trans, error in
+            
+            guard let self = self else { return }
+            
+            if let all = trans {
+                self.character = all.first
+            }
+            else
+            {
+                print("Error fetching heroes : ", error?.localizedDescription.self ?? "")
+            }
+        }
     }
+        
 }

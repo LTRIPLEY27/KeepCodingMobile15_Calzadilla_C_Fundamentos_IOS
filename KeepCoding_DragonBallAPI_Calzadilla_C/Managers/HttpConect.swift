@@ -153,11 +153,10 @@ final class HttpSession {
         task.resume()
     }
     
-    /*
+    
     // MÉTODO PARA OBTENER LOS FAVORITES
     func getTheFavs(token: String?, idHeroe : String?, completion: @escaping ([Character]?, Error?) -> Void )  {
-        
-        guard let favorites = URL(string: "https://dragonball.keepcoding.education/api/data/herolike") else {
+        guard let url = URL(string: "https://dragonball.keepcoding.education/api/data/herolike") else {
             completion(nil, NetworkError.malformedURL)
             return
         }
@@ -165,11 +164,10 @@ final class HttpSession {
         var urlComponents = URLComponents()
         urlComponents.queryItems = [URLQueryItem(name: "hero", value: idHeroe ?? "")]
         
-        var urlRequest = URLRequest(url: favorites)
+        var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
-        urlRequest.setValue("Bearer : \(token ?? "")", forHTTPHeaderField: "Authorization")
+        urlRequest.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")
         urlRequest.httpBody = urlComponents.query?.data(using: .utf8)
-        
         let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             
             guard error == nil else {
@@ -198,5 +196,5 @@ final class HttpSession {
         }
         
         task.resume()
-    }*/
+    }
 }
