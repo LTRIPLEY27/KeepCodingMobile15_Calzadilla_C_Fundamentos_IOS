@@ -9,6 +9,7 @@ import Foundation
 // PERSISTENCIA O CONFIG ARCHIVE
 final class LocalData {
     private static let token = "token"
+    private static let favs = "favs"
     private static let allCharacters = "characters" // --> ALAMCENA LOS REGISTROS DE LA API EN EL ARCHIVO CONFIG DEL PROYECTO
     
     static let shared = LocalData()
@@ -31,20 +32,26 @@ final class LocalData {
         return !getToken().isEmpty
     }
     
+    /*//func saveFavs(favs : [Character]) {
+    func saveFavs(favs : [Any]) {
+        return UserDefaults.standard.set(favs, forKey: Self.favs)
+    }
+    */
+    
     // SOBRECARGA DE MÉTODOS DE LA FUNCIÓN SAVE
-    // SALIMOS DE LOS BITS A CODIFICAR
-    func save(characters : [Character]) {
+    // realizamos la función con genéricos para reutilizar
+    func save<T : Encodable>(characters : [T]) {
         if let encodedCharacter = try? JSONEncoder().encode(characters) {
             UserDefaults.standard.set(encodedCharacter, forKey: Self.allCharacters)
         }
     }
     
     // FUNCIÓN DE ALMACENAJE DE LOS REGISTROS EN LA DATALOCAL
-    func charactersOnLocal() -> [Character] {
+    func charactersOnLocal <T : Codable>() -> [T] {
         // USO DE LOS USER DEFAULTS PARA REALIZAR LA CONSULTA
         if let addCharacter = UserDefaults.standard.object(forKey: Self.allCharacters) as? Data {
             do {
-                let saveCharacter = try JSONDecoder().decode([Character].self, from: addCharacter)
+                let saveCharacter = try JSONDecoder().decode([T].self, from: addCharacter)
                 return saveCharacter
             }
             catch
@@ -56,5 +63,26 @@ final class LocalData {
                 return []
                 }
     }
+    
 
+    /*//func getFavs() -> [Character] {
+    func getFavs() -> [Any] {
+        //return UserDefaults.standard.array(forKey: Self.favs) ?? []
+        //return UserDefaults.standard.object(forKey: Self.favs) ?? []
+        if let addCharacter = UserDefaults.standard.object(forKey: Self.favs) as? [Any] {
+            do {
+                let saveCharacter = addCharacter
+                return saveCharacter
+            }
+            catch
+            {
+                print("Error adding data to local")
+                return []
+            }
+        } else {
+                return []
+                }
+    
+    }*/
+    
 }

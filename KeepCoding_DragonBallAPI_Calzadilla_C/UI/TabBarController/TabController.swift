@@ -44,8 +44,15 @@ class TabController: UITabBarController {
         // DEFINICIÓN DEL NAV Y EL ITEM EN LA VIEW  -->
         navControllerB.tabBarItem = UITabBarItem(title: "CollectionView", image: tabImageB, tag: 1)
         
+        let navControllerC = UINavigationController(rootViewController: FavoriteController())
+        let tabImageC = UIImage(systemName: "heart.text.square")!
+        
+        navControllerC.tabBarItem = UITabBarItem(title: "Favs", image: tabImageC, tag: 3)
+        
+
+        
         // ARRAY DE ITEMS A CONTENER EN EL TAB, LE INDICAMREMOS, CUANTOS DESEEMOS
-        viewControllers = [navControllerA, navControllerB]
+        viewControllers = [navControllerA, navControllerB, navControllerC]
     }
     
     private func setLayout(){

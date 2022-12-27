@@ -9,6 +9,7 @@ import Foundation
 
 struct Transformation : Codable {
     let id : String
+   // let hero : String
     let name : String
     let photo : String
     let description : String

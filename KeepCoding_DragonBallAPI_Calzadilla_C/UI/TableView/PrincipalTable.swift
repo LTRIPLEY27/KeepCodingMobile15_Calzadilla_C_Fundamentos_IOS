@@ -77,7 +77,6 @@ class PrincipalTable: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         cel.nameCharacter.text = itemCustom.name
         cel.imageCharacter.setImage(url: itemCustom.photo)
-        cel.imageCharacter.setImage(url: itemCustom.photo)
         cel.descriptionCharacter.text = itemCustom.description
         
         cel.accessoryType = .disclosureIndicator

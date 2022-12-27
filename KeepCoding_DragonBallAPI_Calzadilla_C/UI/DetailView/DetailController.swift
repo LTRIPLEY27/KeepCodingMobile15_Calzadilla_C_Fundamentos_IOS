@@ -8,7 +8,7 @@
 import UIKit
 
 class DetailController: UIViewController {
-
+    
     @IBOutlet weak var imageCharacter: UIImageView!
     
     @IBOutlet weak var nameCharacter: UILabel!
@@ -17,24 +17,40 @@ class DetailController: UIViewController {
     
     @IBOutlet weak var transformationsCharacter: UIButton!
     
+    @IBOutlet weak var favoriteCharacter: UIButton!
+    
+    
     var character : Character!
+    var transformation : Transformation!
     var charactersTranforms : [Transformation] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // EL BOTON NO SE MUESTRA, ÚNICAMENTE SEGÚN EL PERSONAJE Y LA DISPOSICIÓN DE LA TRANSFORMACIÓN
-        transformationsCharacter.alpha = 0
+        transformationsCharacter.alpha = 1
         
-        title = character.name
-        
-        imageCharacter.setImage(url: character.photo)
-        nameCharacter.text = character.name
-        descriptionCharacter.text = character.description
-        
-        
-        makeTheRequest()
-        
+        transformDetail()
+    }
+    
+    // FUNCIÓN QUE REUTILIZA LOS DETAILS PARA TRANSFORMATION Y PARA DETAIL DE PERSONAJES
+    func transformDetail() {
+        if(character != nil) {
+            title = character.name
+            imageCharacter.setImage(url: character.photo)
+            nameCharacter.text = character.name
+            descriptionCharacter.text = character.description
+            print("aca")
+            makeTheRequest()
+        }
+        else {
+            title = transformation.name
+            imageCharacter.setImage(url: transformation.photo)
+            nameCharacter.text = transformation.name
+            descriptionCharacter.text = transformation.description
+            favoriteCharacter.alpha = 0
+            
+        }
     }
 
     func makeTheRequest() {
@@ -47,6 +63,7 @@ class DetailController: UIViewController {
             if let transforms = trans {
                 self.charactersTranforms = transforms
                 
+                print("transform")
                 print("Tranformations count", transforms.count)
                 
                 if !self.charactersTranforms.isEmpty {
@@ -60,12 +77,22 @@ class DetailController: UIViewController {
         }
     }
     
-    
+    // ACTION DEL BUTTON 'TRANFORMACIONES' PARA ENVIAR AL DETAIL DEL MISMO
     @IBAction func getTransformation(_ sender: Any) {
         
-        // llamamos a la transofr view
+        //llamamos a la transform view
         
-        //let transforView = Tr
+        let transforView = TransformatioController()
+        transforView.transformations = self.charactersTranforms
+        
+        navigationController?.pushViewController(transforView, animated: true)
     }
     
+    // ACTION DEL BUTTON 'Like' PARA AGREGAR AL PERSONAJE COMO ME GUSTA
+    @IBAction func pushFavorite(_ sender: Any) {
+        //let characters : [Character] = LocalData.shared.charactersOnLocal()
+        
+        
+        
+    }
 }

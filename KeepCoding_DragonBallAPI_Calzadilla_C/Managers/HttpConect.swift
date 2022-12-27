@@ -11,7 +11,7 @@ final class HttpSession {
     
     static let shared = HttpSession()
     
-    private var objects: [AnyObject] = []
+    private var objects: [Character] = []
     
     // FUNCIÓN PARA CAPTURAR EL TOKEN
     func login(email : String, password : String, completion : @escaping (String?, Error?) -> Void) {
@@ -153,5 +153,50 @@ final class HttpSession {
         task.resume()
     }
     
-
+    /*
+    // MÉTODO PARA OBTENER LOS FAVORITES
+    func getTheFavs(token: String?, idHeroe : String?, completion: @escaping ([Character]?, Error?) -> Void )  {
+        
+        guard let favorites = URL(string: "https://dragonball.keepcoding.education/api/data/herolike") else {
+            completion(nil, NetworkError.malformedURL)
+            return
+        }
+        
+        var urlComponents = URLComponents()
+        urlComponents.queryItems = [URLQueryItem(name: "hero", value: idHeroe ?? "")]
+        
+        var urlRequest = URLRequest(url: favorites)
+        urlRequest.httpMethod = "POST"
+        urlRequest.setValue("Bearer : \(token ?? "")", forHTTPHeaderField: "Authorization")
+        urlRequest.httpBody = urlComponents.query?.data(using: .utf8)
+        
+        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+            
+            guard error == nil else {
+                completion(nil, error)
+                return
+            }
+            
+            guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+                let statusCode = (response as? HTTPURLResponse)?.statusCode
+                completion(nil, NetworkError.statusCode(code: statusCode))
+                print("Error loading URL: Status error --> ", (response as? HTTPURLResponse)?.statusCode ?? -1)
+                return
+            }
+            
+            guard let data = data else {
+                completion(nil, NetworkError.noData)
+                return
+            }
+            
+            guard let character = try? JSONDecoder().decode([Character].self, from: data) else {
+                completion(nil, NetworkError.decodingFailed)
+                return
+            }
+            
+            completion(character, nil)
+        }
+        
+        task.resume()
+    }*/
 }

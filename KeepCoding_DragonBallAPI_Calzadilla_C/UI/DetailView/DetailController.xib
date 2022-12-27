@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailController" customModule="KeepCoding_DragonBallAPI_Calzadilla_C" customModuleProvider="target">
             <connections>
                 <outlet property="descriptionCharacter" destination="WJW-ls-IWC" id="g1I-Bx-BEr"/>
+                <outlet property="favoriteCharacter" destination="x2d-QN-bUQ" id="Wpz-D4-h1d"/>
                 <outlet property="imageCharacter" destination="WQf-hw-Xmg" id="8hX-yg-aek"/>
                 <outlet property="nameCharacter" destination="9Qp-LF-kfj" id="QLz-BX-gIW"/>
                 <outlet property="transformationsCharacter" destination="7jC-XM-CBl" id="tXs-2A-ZS7"/>
@@ -54,6 +55,17 @@
                         <action selector="getTransformation:" destination="-1" eventType="touchUpInside" id="6ik-ZD-tnu"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x2d-QN-bUQ">
+                    <rect key="frame" x="330" y="422" width="55" height="35"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" systemColor="systemPinkColor"/>
+                    <color key="tintColor" red="0.90550367570000001" green="0.97463905139999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="tinted" title="Like" cornerStyle="capsule"/>
+                    <connections>
+                        <action selector="pushFavorite:" destination="-1" eventType="touchUpInside" id="yHW-xE-wd1"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -70,6 +82,9 @@
         <image name="dragon" width="800" height="800"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
