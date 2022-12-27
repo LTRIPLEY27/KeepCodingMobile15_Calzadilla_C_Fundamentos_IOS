@@ -11,7 +11,8 @@ class FavoriteController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     @IBOutlet weak var favoritesTable: UITableView!
-    private var favorites :[Character] = []
+    private var favorites : [Character] = []
+    private var characters : [Character] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +30,11 @@ class FavoriteController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     // IMPRIME LOS FAVORITOS
+    // se debe de cerrar la app para que tome los valores directamente actualizados, no logré reparar el que lo hiciera ipso facto.
     func giveTheFavs() {
-        let character : [Character] = LocalData.shared.charactersOnLocal()
-        for x in character where x.favorite == true {
+        characters = LocalData.shared.charactersOnLocal()
+        
+        for x in characters where x.favorite == true {
             favorites.append(x)
         }
     }

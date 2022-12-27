@@ -31,6 +31,8 @@
 		25CC9C232954CFD0004507A5 /* CollectionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25CC9C212954CFD0004507A5 /* CollectionController.xib */; };
 		25D34E0E295B073B00555C33 /* FavoriteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D34E0C295B073B00555C33 /* FavoriteController.swift */; };
 		25D34E0F295B073B00555C33 /* FavoriteController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25D34E0D295B073B00555C33 /* FavoriteController.xib */; };
+		25D34E13295B54AB00555C33 /* NewCharacterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D34E11295B54AB00555C33 /* NewCharacterController.swift */; };
+		25D34E14295B54AB00555C33 /* NewCharacterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25D34E12295B54AB00555C33 /* NewCharacterController.xib */; };
 		25ED3E6A29570DF50077F256 /* Transformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25ED3E6929570DF50077F256 /* Transformation.swift */; };
 		25ED3E6E2959CBAD0077F256 /* TransformatioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25ED3E6C2959CBAC0077F256 /* TransformatioController.swift */; };
 		25ED3E6F2959CBAD0077F256 /* TransformatioController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25ED3E6D2959CBAD0077F256 /* TransformatioController.xib */; };
@@ -84,6 +86,8 @@
 		25CC9C212954CFD0004507A5 /* CollectionController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionController.xib; sourceTree = "<group>"; };
 		25D34E0C295B073B00555C33 /* FavoriteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteController.swift; sourceTree = "<group>"; };
 		25D34E0D295B073B00555C33 /* FavoriteController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteController.xib; sourceTree = "<group>"; };
+		25D34E11295B54AB00555C33 /* NewCharacterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCharacterController.swift; sourceTree = "<group>"; };
+		25D34E12295B54AB00555C33 /* NewCharacterController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewCharacterController.xib; sourceTree = "<group>"; };
 		25ED3E6929570DF50077F256 /* Transformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transformation.swift; sourceTree = "<group>"; };
 		25ED3E6C2959CBAC0077F256 /* TransformatioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformatioController.swift; sourceTree = "<group>"; };
 		25ED3E6D2959CBAD0077F256 /* TransformatioController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransformatioController.xib; sourceTree = "<group>"; };
@@ -179,6 +183,7 @@
 		2539EA6E29508283005B8B32 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				25D34E10295B547900555C33 /* NewCharacter */,
 				25D34E0B295B06FE00555C33 /* Favorites */,
 				25ED3E6B2959CB790077F256 /* TranformationView */,
 				25EEB89E29561D4C00FE2508 /* DetailView */,
@@ -279,6 +284,15 @@
 				25D34E0D295B073B00555C33 /* FavoriteController.xib */,
 			);
 			path = Favorites;
+			sourceTree = "<group>";
+		};
+		25D34E10295B547900555C33 /* NewCharacter */ = {
+			isa = PBXGroup;
+			children = (
+				25D34E11295B54AB00555C33 /* NewCharacterController.swift */,
+				25D34E12295B54AB00555C33 /* NewCharacterController.xib */,
+			);
+			path = NewCharacter;
 			sourceTree = "<group>";
 		};
 		25ED3E6B2959CB790077F256 /* TranformationView */ = {
@@ -408,6 +422,7 @@
 				25CC9C232954CFD0004507A5 /* CollectionController.xib in Resources */,
 				25D34E0F295B073B00555C33 /* FavoriteController.xib in Resources */,
 				2539EA8E2950CBC4005B8B32 /* LoginViewController.xib in Resources */,
+				25D34E14295B54AB00555C33 /* NewCharacterController.xib in Resources */,
 				25EEB8A229561D9400FE2508 /* DetailController.xib in Resources */,
 				25ED3E6F2959CBAD0077F256 /* TransformatioController.xib in Resources */,
 				2539EA4A29508207005B8B32 /* LaunchScreen.storyboard in Resources */,
@@ -453,6 +468,7 @@
 				2539EA79295085B0005B8B32 /* CustomCell.swift in Sources */,
 				2539EA4029508206005B8B32 /* SceneDelegate.swift in Sources */,
 				25CC9C222954CFD0004507A5 /* CollectionController.swift in Sources */,
+				25D34E13295B54AB00555C33 /* NewCharacterController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

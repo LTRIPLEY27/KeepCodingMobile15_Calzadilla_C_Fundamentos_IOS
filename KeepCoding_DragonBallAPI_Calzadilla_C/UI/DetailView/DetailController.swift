@@ -100,7 +100,7 @@ class DetailController: UIViewController {
             }
             else
             {
-                print("Error fetching heroes : ", error?.localizedDescription.self ?? "")
+                print("Add to Favorites : ", error?.localizedDescription.self ?? "")
             }
         }
     }
