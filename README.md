@@ -46,6 +46,8 @@ Spoiler: se puede reutilizar alguna pantalla creada anteriormente.
 
 ## Resolución
 
+<div align = "center"> 
+
 ### Pantalla de Login (endpoint: /api/auth/login)
 
 
@@ -53,6 +55,7 @@ Spoiler: se puede reutilizar alguna pantalla creada anteriormente.
 
 ### View de Login
 
+  </div>
 
 ### Listado de heroes (a elegir mostrarlos como tabla o colección) (endpoint: /api/heros/all)
 
@@ -73,8 +76,9 @@ Spoiler: se puede reutilizar alguna pantalla creada anteriormente.
 
 ![image](https://user-images.githubusercontent.com/36207623/209858239-b5293212-8862-474d-b702-b9a33071da46.png)
 
-### View de Detalle con personajes sin transformación
+### View de Detalle con personajes sin transformación y con Transformación
 
+![image](https://user-images.githubusercontent.com/36207623/209859133-537a7fa7-38ab-4521-91cf-01c94357586e.png)
 
 
 
