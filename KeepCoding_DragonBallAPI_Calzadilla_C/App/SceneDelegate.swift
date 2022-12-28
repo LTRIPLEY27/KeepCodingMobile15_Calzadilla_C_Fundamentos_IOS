@@ -20,10 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: windows)
         
-        // DEFINIMOS LA INTERFAZ GRÁFICA A INICICALIZAR COMO RAIZ DE TODA LA APLICACIÓN
-        
-        
-        
+        // DEFINIMOS LA INTERFAZ GRÁFICA A INICICALIZAR COMO RAIZ DE TODA LA APLICACIÓN  
         // ANEXO DE CONDICIONAL PARA ENVIAR UNA INTERFAZ (SE PUDE TRABAJAR MUCHÍSIMO MÁS)
         
         if !LocalData.shared.isUserLogged() {
