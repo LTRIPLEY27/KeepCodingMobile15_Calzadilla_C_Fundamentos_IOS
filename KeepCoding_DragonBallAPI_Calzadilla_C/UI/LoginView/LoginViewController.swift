@@ -11,19 +11,46 @@ class LoginViewController: UIViewController {
 
     // ELEMENTOS DE LA VIEW QUE PODRÁN INTERACTURAR
     
+    /*@IBOutlet weak var emailLogin: UITextField!
+    
+    @IBOutlet weak var passwordLogin: UITextField!
+    
+    @IBOutlet weak var buttonLogin: UIButton!*/
+    
     @IBOutlet weak var emailLogin: UITextField!
     
     @IBOutlet weak var passwordLogin: UITextField!
     
     @IBOutlet weak var buttonLogin: UIButton!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        // ADICIÓN DE LOS OBSERVADORES PARA EJECUTAR LA ACCIÓN DEL TECLADO
+        NotificationCenter.default.addObserver(self, selector: #selector(openKeyboard),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+       
+        NotificationCenter.default.addObserver(self, selector: #selector(closeKeyboard),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+                                               
     }
 
-    /*
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func openKeyboard() {
+        print("open keyboard")
+    }
+    
+    @objc func closeKeyboard() {
+        print("close keyboard")
+    }
+    
+    
     // IMPREGNACIÓN DE ANIMACIONES
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -32,27 +59,27 @@ class LoginViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        email.center.x -= view.bounds.width
-        password.center.x -= view.bounds.width
+        emailLogin.center.x -= view.bounds.width
+        passwordLogin.center.x -= view.bounds.width
         
-        enter.alpha = 0
+        buttonLogin.alpha = 0
         
         
         // ANIMACIÓN
-        UIView.animate(withDuration: 5,
+        UIView.animate(withDuration: 3,
                        delay: 0,
-                       usingSpringWithDamping: 0,75,
-                       initialSpringVelocity: 0
-                       options: []) {
-            self.email.center.x += self.view.bounds.width
-            self.password.center.x += self.view.bounds.width
+                       usingSpringWithDamping: 0.70,
+                       initialSpringVelocity: 0,
+                       options: []){
+            self.emailLogin.center.x += self.view.bounds.width
+            self.passwordLogin.center.x += self.view.bounds.width
         }
         
-        UIView.animate()
-    }*/
+        UIView.animate(withDuration: 3){
+            self.buttonLogin.alpha = 1
+        }
+    }
     
-
-    // ACTION DEL BUTTON PARA LLAMAR A LA FUNCIÓN
     @IBAction func BtnLogin(_ sender: Any) {
         // VERIFICACIÓN MEDIANTE GUARDS DE CADA UNO DE LOS CAMPOS, INTERRUMPE LA ECUCIÓN SI ESTÁN VACÍOS
         guard let email = emailLogin.text, !email.isEmpty else {
@@ -67,10 +94,9 @@ class LoginViewController: UIViewController {
         
         // FUNCIÓN PARA LLAMAR AL MÉTODO DEL MANAGER Y REALIZAR LA CONEXIÓN Y VERIFICACIÓN DEL TOKEN
         makeTheConect(email: email, password: password)
-        
     }
     
-    
+    // ACTION DEL BUTTON PARA LLAMAR A LA FUNCIÓN
     private func makeTheConect(email : String, password : String) -> Void {
         // LLAMADA AL MÉTODO DEL MANAGER PARA HACER LA REQUESTS
         HttpSession.shared.login(email: email, password: password) { token, error in

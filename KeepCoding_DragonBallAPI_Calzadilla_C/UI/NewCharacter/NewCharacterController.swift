@@ -19,6 +19,9 @@ class NewCharacterController: UIViewController {
     
     private var character : Character!
     
+    private var photo : String = ""
+    private var photo2 : String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,10 +40,20 @@ class NewCharacterController: UIViewController {
             return
         }
         
-        guard let photo = photoCharacter.text, !photo.isEmpty else {
+        var characters : [Character] = LocalData.shared.charactersOnLocal()
+        
+        if photoCharacter.text == "" {
+            var rand = Int.random(in: 0 ... characters.count)
+            photo = characters[rand].photo
+            photo2 = characters[rand].photo
+        }else{
+            photo = photoCharacter.text ?? photo2
+        }
+        
+        /*guard let photo = photoCharacter.text, !photo.isEmpty else {
             print("not photo on request")
             return
-        }
+        }*/
     
         makeTheConect(name: name, description: description, photo: photo)
         
@@ -48,12 +61,6 @@ class NewCharacterController: UIViewController {
     
     func makeTheConect(name : String, description : String, photo : String) -> Void {
         let token = LocalData.shared.getToken()
-        //var characters : [Character] = LocalData.shared.charactersOnLocal()
-        
-        /*if photo == "" {
-            var rand = Int.random(in: 0 ... characters.count)
-            photo = characters[rand].photo
-        }*/
         
         HttpSession.shared.addNew(token: token, name: name, description: description, photo: photo) { [weak self] add, error in
             
