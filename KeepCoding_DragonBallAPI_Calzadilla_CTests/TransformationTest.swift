@@ -7,29 +7,60 @@
 
 import XCTest
 
+@testable import KeepCoding_DragonBallAPI_Calzadilla_C
+
 final class TransformationTest: XCTestCase {
+    
+    var transformation : Transformation!
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    override func setUp() {
+        super.setUp()
+        
+        transformation = Transformation(id : "666",
+                                        hero: ["id" : "111"],
+                                        name : "Gorilin",
+                                        photo : "gorilin.jpg",
+                                        description: "Gorilin is the best")
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    override func tearDown() {
+        transformation = nil
+        super.tearDown()
+        
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testTransforId() {
+
+        XCTAssertNotNil(transformation.id)
+        XCTAssertTrue(transformation.id == "666")
+        XCTAssertFalse(transformation.id == "111")
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testTransforHero() {
+        
+        XCTAssertNotNil(transformation.hero["id"])
+        XCTAssertFalse(transformation.hero["id"] == "666")
+        XCTAssertTrue(transformation.hero["id"] == "111")
     }
-
+    
+    func testTransforName() {
+        XCTAssertNotNil(transformation.name)
+        XCTAssertEqual(transformation.name, "Gorilin")
+        XCTAssertFalse(transformation.name == "Broly")
+    }
+    
+    func testTransforPhoto() {
+        
+        XCTAssertTrue(!transformation.photo.isEmpty)
+        XCTAssertEqual(transformation.photo, "gorilin.jpg")
+        XCTAssertFalse(transformation.photo.isEmpty)
+    }
+    
+    func testTransforDescription() {
+        
+        XCTAssertTrue(!transformation.description.isEmpty)
+        XCTAssertFalse(transformation.description == "")
+        XCTAssertNotEqual(transformation.description, "Gorilin is the worst")
+        XCTAssertTrue(transformation.description == "Gorilin is the best")
+    }
 }
