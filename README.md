@@ -139,5 +139,12 @@ elección del 'Me gusta' en la colección, conseguí solventarlo con una request
 
 
 ![image](https://user-images.githubusercontent.com/36207623/209860626-08030998-649c-41f6-817a-de6ffc08291b.png)
+  
+  
+### Registro en el Server
+  
+  
+![image](https://user-images.githubusercontent.com/36207623/209862236-1cbed083-eab3-470e-83e4-effa95d4aca3.png)
+  
 
   </div>
