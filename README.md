@@ -55,7 +55,7 @@ Spoiler: se puede reutilizar alguna pantalla creada anteriormente.
 
 ### View de Login
 
-  </div>
+  
 
 ### Listado de heroes (a elegir mostrarlos como tabla o colección) (endpoint: /api/heros/all)
 
@@ -139,3 +139,5 @@ elección del 'Me gusta' en la colección, conseguí solventarlo con una request
 
 
 ![image](https://user-images.githubusercontent.com/36207623/209860626-08030998-649c-41f6-817a-de6ffc08291b.png)
+
+  </div>
