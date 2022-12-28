@@ -120,7 +120,6 @@ class DetailController: UIViewController {
     
     // ACTION DEL BUTTON 'Like' PARA AGREGAR AL PERSONAJE COMO ME GUSTA
     @IBAction func pushFavorite(_ sender: Any) {
-        //let characters : [Character] = LocalData.shared.charactersOnLocal()
         let token = LocalData.shared.getToken()
         
         HttpSession.shared.getTheFavs(token: token, idHeroe: transformation.hero["id"]) { [weak self] trans, error in
