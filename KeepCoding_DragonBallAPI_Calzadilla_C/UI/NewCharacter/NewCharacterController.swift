@@ -73,6 +73,7 @@ class NewCharacterController: UIViewController {
         
         var characters : [Character] = LocalData.shared.charactersOnLocal()
         
+        // RESPECTO A LA FOTO, SE PUEDE SOLO ADJUNTAR EL LINK QUE SE DESEE EN EL TEXT FIELD, CASO CONTRARIO, TOMARÁ UNA IMAGEN RANDOM DE LOS PERSONAJES YA ALMACENADOS Y ADJUNTARÁ AL NUEVO PERSONAJE
         if photoCharacter.text == "" {
             var rand = Int.random(in: 0 ... characters.count)
             photo = characters[rand].photo

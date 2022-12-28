@@ -8,14 +8,6 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
-    // ELEMENTOS DE LA VIEW QUE PODRÁN INTERACTURAR
-    
-    /*@IBOutlet weak var emailLogin: UITextField!
-    
-    @IBOutlet weak var passwordLogin: UITextField!
-    
-    @IBOutlet weak var buttonLogin: UIButton!*/
     
     @IBOutlet weak var emailLogin: UITextField!
     

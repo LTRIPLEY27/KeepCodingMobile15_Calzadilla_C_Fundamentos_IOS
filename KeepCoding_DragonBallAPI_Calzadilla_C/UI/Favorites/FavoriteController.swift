@@ -20,6 +20,7 @@ class FavoriteController: UIViewController, UITableViewDelegate, UITableViewData
         favoritesTable.delegate = self
         favoritesTable.dataSource = self
         
+        // REUTILIZACIÓN DE LAS CELDAS CREADAS
         navigationItem.title = "Favorites"
         
         let xib = UINib(nibName: "CustomCell", bundle: nil)
@@ -52,6 +53,7 @@ class FavoriteController: UIViewController, UITableViewDelegate, UITableViewData
     
     // IMPRIME LOS FAVORITOS
     // se debe de cerrar la app para que tome los valores directamente actualizados, no logré reparar el que lo hiciera ipso facto.
+    // intenté mediante el llamado HTTP de allcharacters, pero se quedaba guindada largo rato, así que me pareció más factible, solo cerrar y reiniciar la app, ocasionaba menos pérdida de tiempo
     func giveTheFavs() {
         characters = LocalData.shared.charactersOnLocal()
         

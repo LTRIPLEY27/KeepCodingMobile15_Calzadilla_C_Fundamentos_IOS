@@ -86,6 +86,7 @@ class DetailController: UIViewController {
     func makeTheRequest() {
         let token = LocalData.shared.getToken()
         
+        // INVOCACIÓN AL REQUEST MEDIANTE EL HttpSession
         HttpSession.shared.getTransformations(token: token, characterId: character.id) { [weak self] trans, error in
             
             guard let self = self else { return }
@@ -122,6 +123,7 @@ class DetailController: UIViewController {
     @IBAction func pushFavorite(_ sender: Any) {
         let token = LocalData.shared.getToken()
         
+        // INVOCACIÓN AL REQUEST MEDIANTE EL HttpSession
         HttpSession.shared.getTheFavs(token: token, idHeroe: transformation.hero["id"]) { [weak self] trans, error in
             
             guard let self = self else { return }
