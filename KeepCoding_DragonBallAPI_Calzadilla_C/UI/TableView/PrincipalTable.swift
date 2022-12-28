@@ -33,6 +33,28 @@ class PrincipalTable: UIViewController, UITableViewDelegate, UITableViewDataSour
         makeTheConsult()
     }
     
+    // IMPREGNACIÓN DE ANIMACIONES A LA TABLEBASE
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        tableBase.center.x -= view.bounds.width
+        
+        // ANIMACIÓN
+        UIView.animate(withDuration: 8,
+                       delay: 0,
+                       usingSpringWithDamping: 0.40,
+                       initialSpringVelocity: 0,
+                       options: []){
+            self.tableBase.center.x += self.view.bounds.width
+        }
+
+    }
+    
+    //*******
     // FUNCION QUE CONECTA LA REQUESR MEDIANTE EL LLAMADO DEL MANAGER
     func makeTheConsult() {
         // VERIFICACIÓN DEL TOKEN

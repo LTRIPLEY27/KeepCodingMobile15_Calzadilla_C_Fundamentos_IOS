@@ -8,7 +8,7 @@
 import UIKit
 
 class NewCharacterController: UIViewController {
-
+    
     @IBOutlet weak var nameCharacter: UITextField!
     
     @IBOutlet weak var descriptionCharacter: UITextField!
@@ -25,8 +25,39 @@ class NewCharacterController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
     }
+    
+    // IMPREGNACIÓN DE ANIMACIONES A LA TABLEBASE
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // DEFINICIÓN DE LOS ELEMENTOS A ANIMAR
+        nameCharacter.center.x -= view.bounds.width
+        descriptionCharacter.center.x -= view.bounds.width
+        photoCharacter.center.x -= view.bounds.width
+        
+        addButton.alpha = 0
+        // ANIMACIÓN
+        UIView.animate(withDuration: 8,
+                       delay: 0,
+                       usingSpringWithDamping: 0.40,
+                       initialSpringVelocity: 0,
+                       options: []){
+            self.nameCharacter.center.x += self.view.bounds.width
+            self.descriptionCharacter.center.x += self.view.bounds.width
+            self.photoCharacter.center.x += self.view.bounds.width
+        }
+        
+        UIView.animate(withDuration: 8){
+            self.addButton.alpha = 1
+        }
+    }
+    
+    //*******
 
     @IBAction func addNewCharacter(_ sender: Any) {
         

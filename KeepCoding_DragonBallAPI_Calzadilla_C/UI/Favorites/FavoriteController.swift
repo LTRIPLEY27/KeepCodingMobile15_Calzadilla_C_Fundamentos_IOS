@@ -29,6 +29,27 @@ class FavoriteController: UIViewController, UITableViewDelegate, UITableViewData
         giveTheFavs()
     }
     
+    // IMPREGNACIÓN DE ANIMACIONES A LA COLLECTION VIEW
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        favoritesTable.center.x -= view.bounds.width
+        
+        // ANIMACIÓN
+        UIView.animate(withDuration: 8,
+                       delay: 0,
+                       usingSpringWithDamping: 0.40,
+                       initialSpringVelocity: 0,
+                       options: []){
+            self.favoritesTable.center.x += self.view.bounds.width
+        }
+    }
+    
+    
     // IMPRIME LOS FAVORITOS
     // se debe de cerrar la app para que tome los valores directamente actualizados, no logré reparar el que lo hiciera ipso facto.
     func giveTheFavs() {

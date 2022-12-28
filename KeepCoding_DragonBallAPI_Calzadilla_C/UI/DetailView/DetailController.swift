@@ -33,6 +33,37 @@ class DetailController: UIViewController {
         transformDetail()
     }
     
+    //**********************
+    // IMPREGNACIÓN DE ANIMACIONES A LA TABLEBASE
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // DEFINICIÓN DE LOS ELEMENTOS A ANIMAR
+        imageCharacter.center.x -= view.bounds.width
+        nameCharacter.center.x -= view.bounds.width
+        descriptionCharacter.center.x -= view.bounds.width
+
+        // ANIMACIÓN
+        UIView.animate(withDuration: 8,
+                       delay: 0,
+                       usingSpringWithDamping: 0.40,
+                       initialSpringVelocity: 0,
+                       options: []){
+            self.imageCharacter.center.x += self.view.bounds.width
+            self.nameCharacter.center.x += self.view.bounds.width
+            self.descriptionCharacter.center.x += self.view.bounds.width
+            
+        }
+
+    }
+    
+    //*******
+
+    
     // FUNCIÓN QUE REUTILIZA LOS DETAILS PARA TRANSFORMATION Y PARA DETAIL DE PERSONAJES
     func transformDetail() {
         if(character != nil) {
@@ -48,6 +79,7 @@ class DetailController: UIViewController {
             imageCharacter.setImage(url: transformation.photo)
             nameCharacter.text = transformation.name
             descriptionCharacter.text = transformation.description
+            
         }
     }
 

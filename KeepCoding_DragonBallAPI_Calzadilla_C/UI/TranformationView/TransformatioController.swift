@@ -24,6 +24,28 @@ class TransformatioController: UIViewController, UITableViewDelegate, UITableVie
         
         transformationView.register(xib, forCellReuseIdentifier: "transformation")
     }
+    
+    // IMPREGNACIÓN DE ANIMACIONES A LA COLLECTION VIEW
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        transformationView.center.x -= view.bounds.width
+        
+        // ANIMACIÓN
+        UIView.animate(withDuration: 10,
+                       delay: 0,
+                       usingSpringWithDamping: 0.40,
+                       initialSpringVelocity: 0,
+                       options: []){
+            self.transformationView.center.x += self.view.bounds.width
+        }
+
+    }
+    
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return transformations.count

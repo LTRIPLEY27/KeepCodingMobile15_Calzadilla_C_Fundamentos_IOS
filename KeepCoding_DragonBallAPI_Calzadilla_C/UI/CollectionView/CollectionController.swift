@@ -31,6 +31,26 @@ class CollectionController: UIViewController, UICollectionViewDelegate, UICollec
         
     }
     
+    // IMPREGNACIÓN DE ANIMACIONES A LA COLLECTION VIEW
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        collectionView.center.x -= view.bounds.width
+        
+        // ANIMACIÓN
+        UIView.animate(withDuration: 8,
+                       delay: 0,
+                       usingSpringWithDamping: 0.40,
+                       initialSpringVelocity: 0,
+                       options: []){
+            self.collectionView.center.x += self.view.bounds.width
+        }
+    }
+    
     // MÉTODOS DELEGADOS DE LA INTERFACE 'DATASOURCE'
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return characters.count
