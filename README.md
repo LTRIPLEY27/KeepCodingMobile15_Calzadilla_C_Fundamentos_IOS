@@ -78,7 +78,7 @@ Spoiler: se puede reutilizar alguna pantalla creada anteriormente.
 
 ### View de Detalle con personajes sin transformación y con Transformación
 
-![image](https://user-images.githubusercontent.com/36207623/209859133-537a7fa7-38ab-4521-91cf-01c94357586e.png)
+![image](https://user-images.githubusercontent.com/36207623/209858415-c0e7a55b-4087-48b4-ab1f-a23439c445e2.png)
 
 
 
